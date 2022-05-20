@@ -3,7 +3,7 @@
 use App\Http\Controllers\Admin\LinkController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\middleware\AuthMiddleware;
+use App\Http\middleware\AuthMiddleware;
 use MiladRahimi\PhpRouter\Router;
 
 $router = Router::create();

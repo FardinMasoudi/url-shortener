@@ -1,6 +1,6 @@
 <?php
 
-namespace App\middleware;
+namespace App\Http\middleware;
 
 use App\jwt\JwtHandler;
 use Laminas\Diactoros\Response\JsonResponse;
