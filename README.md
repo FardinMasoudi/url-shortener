@@ -24,28 +24,24 @@ A few of the things you can do with project-managment
 
 A few of the techniques you can do see in shortener link system
 
-- Don`t usage framework
-- Don`t usage orm
-- Usage composer to manage classes
-- Usage jwt for authentication
+- Don`t using framework
+- Don`t using orm
+- Using Redis for cache urls
+- Using composer to manage classes
+- Using jwt for authentication
 - Written wrapper for return response as ApiController
-- Usage never write custom actions technique
-- Usage invokable method in controllers that have only one method
-- Usage validation request
-- Usage repository pattern
-- Usage ioc container
-- Usage middleware for check token
+- Using never write custom actions technique
+- Using invokable method in controllers that have only one method
+- Using validation request
+- Using repository pattern
+- Using ioc container
+- Using middleware for check token
 - Dockerized project with docker-compose
 
 ### <a id="build-process"> Build </a>
 
-- git clone https://github.com/FardinMasoudi/project-managment.git
+- git clone https://github.com/FardinMasoudi/url-shortener.git
 - install docker and docker compose
-- exec to container and write commands:
+- exec to url-shorter_app_1 container and write commands:
     - composer install
-    - php artisan migrate
-    - php artisan db:seed
-    - copy `* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1`  and paste to
-      /etc/cron.tab to run schecdule command
-    - php artisan test
-
+- get urls.sql in root directory and import to phpmyadmin    
