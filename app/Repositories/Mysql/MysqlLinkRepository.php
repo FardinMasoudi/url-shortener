@@ -37,18 +37,14 @@ class MysqlLinkRepository
         return $query->execute();
     }
 
-    public function updateLink($id)
+    public function updateLink($id,$domain,$url,$shortenLink)
     {
-        $url = $_POST['url'];
-        $domain = $_POST['domain'];
-        $hash = 'a';
-
         $sql = "UPDATE links set domain=:domain,url=:url,hash=:hash where id=:id";
         $query = $this->pdo->prepare($sql);
 
         $query->bindParam(':domain', $domain, PDO::PARAM_STR);
         $query->bindParam(':url', $url, PDO::PARAM_STR);
-        $query->bindParam(':hash', $hash, PDO::PARAM_STR);
+        $query->bindParam(':hash', $shortenLink, PDO::PARAM_STR);
         $query->bindParam(':id', $id, PDO::PARAM_STR);
 
         return $query->execute();

@@ -31,7 +31,12 @@ class LinkService
 
     public function update($id): bool
     {
-        return $this->linkRepo->updateLink($id);
+        $domain = $_POST['domain'];
+        $url = $_POST['url'];
+
+        $shortenLink = $this->shortenLink();
+
+        return $this->linkRepo->updateLink($id,$domain,$url,$shortenLink);
     }
 
     public function delete($id): bool

@@ -3,12 +3,12 @@ $redis = new Redis();
 
 $redis->connect('url-shorter_cache_1', 6379);
 $redis->auth('eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81');
-
 $cacheKey = 'LINKS';
+
 if (!$redis->get($cacheKey)) {
 
     $redis->set($cacheKey, '1');
-    $redis->expire($cacheKey,10);
+    $redis->expire($cacheKey,1000);
     $source = 'MySQL Server';
 
     $instance = new \Database\MysqlDbConfig();
@@ -34,3 +34,6 @@ if (!$redis->get($cacheKey)) {
     $source = 'Redis Server';
     $links = $redis->hMGet('link:a', ['domain', 'url']);
 }
+
+json_encode(var_dump($source));
+
