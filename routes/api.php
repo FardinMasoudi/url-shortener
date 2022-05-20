@@ -13,6 +13,7 @@ $router->post('/register', RegisterController::class);
 $router->post('/login', LoginController::class);
 
 // admin routes
+// manage links(get,create,update,delete)
 $router->group(['middleware' => [AuthMiddleware::class]], function (Router $router) {
     $router->get('/links', [LinkController::class, 'index']);
     $router->post('/links', [LinkController::class, 'store']);
@@ -21,6 +22,7 @@ $router->group(['middleware' => [AuthMiddleware::class]], function (Router $rout
 });
 
 // client routes
-$router->get('/client/links/{hash}',\App\Http\Controllers\Client\LinkController::class);
+// single action controller
+$router->get('/client/links/{hash}', \App\Http\Controllers\Client\LinkController::class);
 
 $router->dispatch();
