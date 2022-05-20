@@ -34,9 +34,8 @@ A few of the techniques you can do see in shortener link system
 - Using invokable method in controllers that have only one method
 - Using validation request
 - Using repository pattern
-- Using ioc container
 - Using middleware for check token
-- Dockerized project with docker-compose
+- Dockerized project with docker and docker-compose
 
 ### <a id="build-process"> Build </a>
 
@@ -45,3 +44,4 @@ A few of the techniques you can do see in shortener link system
 - exec to url-shorter_app_1 container and write commands:
     - composer install
 - get urls.sql in root directory and import to phpmyadmin    
+- get postman collection in root directory and import to postman
