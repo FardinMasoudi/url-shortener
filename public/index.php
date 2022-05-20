@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 $app = require __DIR__ . '/../bootstrap.php';
 
-$app->run();
+
 
 
 
