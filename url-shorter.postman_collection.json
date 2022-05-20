@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "c7f83fcb-d244-4e92-92d3-aca2c00c31fd",
+		"name": "url-shorter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "fardin",
+									"type": "default"
+								},
+								{
+									"key": "username",
+									"value": "fardin1",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:88/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "fardin2",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "mas1514",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:88/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg4LyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODgvIiwiaWF0IjoxNjUzMDMyMDczLCJleHAiOjE2NTMwMzU2NzMsImRhdGEiOnsiaWQiOjQsIm5hbWUiOiJmYXJkaW4iLCJ1c2VybmFtZSI6ImZhcmRpbjIifX0.49nnl-60XbkgAFbffq7FvJ0VGcuS2LyooCEdLA_aRLY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg4L2xpbmtzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4OC9saW5rcyIsImlhdCI6MTY1MzAyNjQ2NiwiZXhwIjoxNjUzMDMwMDY2LCJkYXRhIjp7ImlkIjo0fX0.ychPsU1NHLQaZ2_q9WqSY2-rTnYhqDoy6QBCfL4rxWg",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:88/links",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"links"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg4LyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODgvIiwiaWF0IjoxNjUzMDMyMDczLCJleHAiOjE2NTMwMzU2NzMsImRhdGEiOnsiaWQiOjQsIm5hbWUiOiJmYXJkaW4iLCJ1c2VybmFtZSI6ImZhcmRpbjIifX0.49nnl-60XbkgAFbffq7FvJ0VGcuS2LyooCEdLA_aRLY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "domain",
+									"value": "filimo.com/",
+									"type": "default"
+								},
+								{
+									"key": "url",
+									"value": "filimmo url shrter",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:88/links",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"links"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg4LyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODgvIiwiaWF0IjoxNjUzMDMyMDczLCJleHAiOjE2NTMwMzU2NzMsImRhdGEiOnsiaWQiOjQsIm5hbWUiOiJmYXJkaW4iLCJ1c2VybmFtZSI6ImZhcmRpbjIifX0.49nnl-60XbkgAFbffq7FvJ0VGcuS2LyooCEdLA_aRLY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "domain",
+									"value": "aparat.com/",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "how-to-shortner-url-with-php2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:88/links/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"links",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0Ojg4LyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODgvIiwiaWF0IjoxNjUzMDMyMDczLCJleHAiOjE2NTMwMzU2NzMsImRhdGEiOnsiaWQiOjQsIm5hbWUiOiJmYXJkaW4iLCJ1c2VybmFtZSI6ImZhcmRpbjIifX0.49nnl-60XbkgAFbffq7FvJ0VGcuS2LyooCEdLA_aRLY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/links/5/delete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"links",
+								"5",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "client",
+			"item": [
+				{
+					"name": "get_url_by_hash",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:88/client/links/a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "88",
+							"path": [
+								"client",
+								"links",
+								"a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
