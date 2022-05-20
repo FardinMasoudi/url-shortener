@@ -21,12 +21,16 @@ class UserService
 
     public function login()
     {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        // validate inputs
+        if (!isset($_POST['username'])){
+            return 'username is required';
+        }
+        if (!isset($_POST['password'])){
+            return 'password is required';
+        }
+        $user = $this->userRepo->findUserByUsername($_POST['username']);
 
-        $user = $this->userRepo->findUserByUsername($username);
-
-        if ($this->isPasswordCorrect($password, $user['password'])) {
+        if ($this->isPasswordCorrect($_POST['password'], $user['password'])) {
             return $this->generateToken($user);
         }
     }

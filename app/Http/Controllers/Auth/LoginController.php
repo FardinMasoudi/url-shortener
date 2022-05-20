@@ -9,8 +9,8 @@ class LoginController extends ApiController
 {
     public function handle(UserService $userService): \Laminas\Diactoros\Response\JsonResponse
     {
-        $token = $userService->login();
+        $info = $userService->login();
 
-        return $this->responseOk(['token' => $token]);
+        return $this->responseOk($info);
     }
 }
