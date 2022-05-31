@@ -13,8 +13,8 @@ class RedisDbConfig
             $redis = new Redis();
 
             //host: redis container name
-            $redis->connect('url-shorter_cache_1', 6379);
-            $redis->auth('eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81');
+            $redis->connect($_ENV['REDIS_HOST'], $_ENV["REDIS_PORT"]);
+            $redis->auth($_ENV['REDIS_PASSWORD']);
             return $redis;
         } catch (PDOException $e) {
             exit("Error: " . $e->getMessage());

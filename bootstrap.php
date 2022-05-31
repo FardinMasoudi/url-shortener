@@ -6,9 +6,10 @@ require_once __DIR__ . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
+//load redis configuration
+require __DIR__ . '/app/Redis/Link.php';
+
 //load apis
 require __DIR__ . '/routes/api.php';
 
-//load redis configuration
-require __DIR__ . '/app/Redis/Link.php';
 

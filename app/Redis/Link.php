@@ -1,14 +1,13 @@
 <?php
 $redis = new Redis();
 
-$redis->connect('url-shorter_cache_1', 6379);
-$redis->auth('eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81');
+$redis->connect($_ENV['REDIS_HOST'], $_ENV["REDIS_PORT"]);
+$redis->auth($_ENV['REDIS_PASSWORD']);
 $cacheKey = 'LINKS';
-
+//$redis->del('LINKS');
 if (!$redis->get($cacheKey)) {
-
     $redis->set($cacheKey, '1');
-    $redis->expire($cacheKey,1000);
+    $redis->expire($cacheKey, 10);
     $source = 'MySQL Server';
 
     $instance = new \Database\MysqlDbConfig();
